@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding person</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/persons}"
+      th:object="${pers}">
+    <label for="name"></label>
+    <input type="text" th:field="*{name}" id="name">
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
+    </br>
+    <label for="yearofbirth"></label>
+    <input type="text" th:field="*{yearofbirth}" id="yearofbirth">
+    <div style="color:red" th:if="${#fields.hasErrors('yearofbirth')}" th:errors="*{yearofbirth}">Error</div>
+    <input type="submit" value="new">
+</form>
+
+</body>
+</html>

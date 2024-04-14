@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<p th:text = "${book.getId()}">id</p>
+<p th:text = "${book.getTitle()}">name</p>
+<p th:text = "${book.getAuthor()}">author</p>
+<p th:text = "${book.getYear()}">year</p>
+<div th:if="${book.getPerson!=null}" th:text = "${book.getPerson.getName()}">ownername></div>
+</b>
+<form th:method="GET" th:action="@{/books/{id}/update(id=${book.getId()})}">
+    <input type="submit" value="Update book">
+</form>
+</br>
+<form th:method="GET" th:action="@{/books/{id}/owner(id=${book.getId()})}">
+    <input type="submit" value="Owner">
+</form>
+</br>
+<form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
+    <input type="submit" value="Delete book">
+</form>
+
+
+
+
+</body>
+</html>
