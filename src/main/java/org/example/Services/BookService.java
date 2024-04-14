@@ -37,7 +37,7 @@ public class BookService {
     }
     public List<Book> getBooks(int id)
     {
-        Person person = Optionalizer.getPerson(personRepository.findById(id));
+        Person person = personRepository.getReferenceById(id);
         return bookRepository.findByPerson(person);
     }
     @Transactional
